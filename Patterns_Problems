@@ -1,0 +1,230 @@
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream>
+using namespace std;
+void printFullHollowRect(){
+    int m,n;
+    cin>>m>>n;
+    cout<<"FULL\n";
+    for(int i=0;i<m;i++){
+        for(int j=0;j<n;j++){
+            cout<<"*";
+        }
+        cout<<"\n";
+    }
+    cout<<"HOLLOW \n";
+    for(int i=0;i<m;i++){
+        for(int j=0;j<n;j++){
+            if(i == 0 || i == m-1|| j == 0 || j == n-1)
+                cout<<"*";
+            else 
+                cout<<" "; 
+        }
+        cout<<"\n";
+    }
+}
+void printFullHollowRhombus(){
+    int m;
+    cin>>m;
+    cout<<"FULL\n";
+    for(int i=0;i<m;i++){
+        for(int k=0;k<m-i;k++)
+            cout<<" ";
+        for(int j=0;j<m;j++)
+            cout<<"*";
+        for(int k=0;k<m-i;k++)
+            cout<<" ";
+        cout<<"\n";
+    }
+    cout<<"\nHOLLOW\n";
+    for(int i=0;i<m;i++){
+        for(int k=0;k<m-i;k++)
+            cout<<" ";
+        for(int j=0;j<m;j++)
+            if(j==0 || j==m-1 || i==0 || i==m-1)
+            cout<<"*";
+            else
+            cout<<" ";
+        for(int k=0;k<m-i;k++)
+            cout<<" ";
+        cout<<"\n";
+    }
+    
+}
+void printFullHollowPyramid(){
+    int m;
+    cin>>m;
+    cout<<"\nFULL PYRAMID\n";
+    for(int i=0;i<=m;i++)
+    {
+        for(int k=0;k<m-i;k++)
+            cout<<" ";
+        for(int j=0;j<i;j++)
+            cout<<"* ";
+        for(int k=0;k<m-i;k++)
+            cout<<" ";
+        cout<<"\n";
+    }
+    int y = 0;
+    cout<<"\nHOLLOW PYRAMID\n";
+    for(int i=1;i<=m;i++){
+        for(int j=i;j<m;j++){
+            cout<<" ";
+        }
+        while(y!=(2 * i - 1)){
+            if(y==0 || y==(2 * i - 2))
+            cout<<"* ";
+            else 
+            cout<<" ";
+            y++;
+        }
+        y = 0;
+        cout<<"\n";
+    }
+    for(int i=1;i<=m+1;i++)
+        cout<<"* ";
+}
+void printPatternNumbers(){
+    int n,cntr=1;
+    cin>>n;
+    cout<<"\n HALF PYRAMID \n";
+    for(int i=1;i<=n;i++)
+    {
+        for(int j=1;j<=i;j++){
+            cout<<cntr++<<" ";
+        }
+        cntr=1;
+        cout<<"\n";
+    }
+    cout<<"\n INVERTED HALF PYRAMID \n";
+    for(int i=n;i>=1;i--)
+    {
+        for(int j=1;j<=i;j++){
+            cout<<cntr++<<" ";
+        }
+        cout<<"\n";
+        cntr=1;
+    }
+    cout<<"\n HALF HOLLOW PYRAMID \n";
+    for(int i=1;i<n;i++)
+    {
+        for(int j=1;j<=i;j++){
+            if(j==1 || j==i)
+            cout<<cntr<<" ";
+            else
+            cout<<" ";
+            cntr++;
+        }
+        cntr=1;
+        cout<<"\n";
+    }
+    for(int i=1;i<=n;i++)
+        cout<<i<<" ";
+    cout<<"\n";
+}
+void printPalindromic(){
+    int n;
+    cin>>n;
+    for(int i=1;i<=n;i++){
+        for(int f=1;f<=2*(n-i);f++)
+            cout<<" ";
+        for(int k=1;k<=i;k++)
+            cout<<k<<" ";
+        for(int l=i-1;l>=1;l--)
+            cout<<l<<" ";
+        cout<<"\n";
+    }
+}
+void diamondPattern(){
+    int n;
+    cin>>n;
+    cout<<"\nFULL DIAMOND\n";
+    for(int i=0;i<=n;i++)
+    {
+        for(int k=0;k<n-i;k++)
+            cout<<" ";
+        for(int j=0;j<i;j++)
+            cout<<"* ";
+        for(int k=0;k<n-i;k++)
+            cout<<" ";
+        cout<<"\n";
+    }
+    for(int i=n-1;i>=1;i--){
+        for(int f=1;f<=n-i;f++)
+            cout<<" ";
+        for(int j=0;j<i;j++)
+            cout<<"* ";
+        for(int k=1;k<=i;k++)
+            cout<<" ";
+        cout<<"\n";
+    }
+    int y = 0;
+    cout<<"\nHOLLOW DIAMOND\n";
+    for(int i=1;i<=n;i++)
+    {
+        for(int k=0;k<n-i;k++)
+            cout<<" ";
+        while(y!= (2*i -1)){
+            if(y==0 || y== 2 * i - 2)
+                cout<<"* ";
+            else
+                cout<<" ";
+            y++;
+        }
+            y = 0;
+        for(int k=0;k<n-i;k++)
+            cout<<" ";
+        cout<<"\n";
+    }
+    for(int i=n-1;i>=1;i--){
+        for(int f=1;f<=n-i;f++)
+            cout<<" ";
+        while(y!= (2*i -1)){
+            if(y==0 || y== 2 * i - 2)
+                cout<<"* ";
+            else
+                cout<<" ";
+            y++;
+        }
+            y = 0;
+        for(int k=1;k<=i;k++)
+            cout<<" ";
+        cout<<"\n";
+    }
+    for(int i=1;i<=n;i++){
+        cout<<"*";
+        for(int k=1;k<=i;k++)
+            cout<<k<<" ";
+        for(int l=i-1;l>=1;l--)
+            cout<<l<<" ";
+        cout<<"*\n";
+    }
+    for(int i=n-1;i>=1;i--){
+        cout<<"*";
+        for(int j=1;j<=i;j++)
+            cout<<j<<" ";
+        for(int l=i-1;l>=1;l--)
+            cout<<l<<" ";
+        cout<<"*\n";
+    }
+}
+int main()
+{
+    //cout<<"\n Print Reactangle ";
+    //printFullHollowRect();
+    //cout<<"\n Print Rhombus ";
+    //printFullHollowRhombus();
+    //cout<<"\n Print PYRAMID ";
+    //printFullHollowPyramid();
+    //cout<<"\n Print NUMBERS PYRAMID ";
+    //printPatternNumbers();
+    //printPalindromic();
+    //diamondPattern();
+    return 0;
+}
